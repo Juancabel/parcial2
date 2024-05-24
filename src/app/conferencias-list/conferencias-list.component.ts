@@ -22,8 +22,10 @@ export class ConferenciasListComponent implements OnInit {
   countConferencias(conferencias: Array<conferencia>){
     let count:number = 0;
     let currentDate = new Date();
+    
     for (let i:number =0;i<conferencias.length;i++){
-      if (conferencias[i].starts > currentDate){
+      let date = new Date(conferencias[i].starts);
+    if (date >= currentDate){
         count++;
       }
     }
